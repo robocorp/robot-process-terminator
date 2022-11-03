@@ -9,6 +9,9 @@ Terminate Workitems
 *** Keywords ***
 Terminate Workitem
     TRY
+        Set work item variable    _TERMINAL_  True
+        Save Work Item
+
         Release Input Work Item    DONE
     EXCEPT    AS    ${err}
         Log    ${err}    level=ERROR
